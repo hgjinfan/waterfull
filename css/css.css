@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #eeeeee;
+}
+.outerBox{
+
+}
+.waterfall{
+    width: 790px;
+    margin: 0 auto;
+    position: relative;
+}
+.grid{
+    width: 230px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.6);
+    background: white;
+    position: absolute;
+    background-color: #DBDBDB;
+    transition:all 1s ease 0;
+}
+.grid .pic_box{
+    display: block;
+    width: 100%;
+}
+.grid .pic_box img{
+    width: 100%;
+}
+.grid .share{
+    width: 206px;
+    height: 43px;
+    padding: 3px 10px 0px 14px;
+}
+.grid .share h3{
+    color:#212121;
+    height: 19px;
+    font-weight:normal;
+    font-size: 13px;
+    font-family: "微软雅黑";
+    line-height: 19px;
+}
+.shareNr{
+
+}
+.shareNr a{
+    text-decoration: none;
+    display: block;
+}
+.shareNr .xin{
+    width: 12px;
+    height: 10px;
+    overflow: hidden;
+    background: url(../images/icon.gif) no-repeat 0 0;
+    float: left;
+    margin-top: 5px;
+}
+.shareNr .xin a{
+    width: 12px;
+    height: 10px;
+}
+.shareNr .font{
+    color: #9A9A9A;
+    padding-left: 9px;
+    font-size:12px;
+    float: left;
+    padding-top: 2px;
+}  
+.shareNr .line{
+    margin: 0 8px;
+    float: left;
+    color: #9A9A9A;    
+}
+.shareNr .pinglun{
+    width: 15px;
+    height: 12px;
+    overflow: hidden;
+    background: url(../images/icon.gif) no-repeat 0 -11px;
+    float: left;
+    margin-top: 6px;    
+}
+.shareNr .pinglun a{
+    width: 15px;
+    height: 12px;
+}
+.shareNr .qq{
+    width: 12px;
+    height: 16px;
+    float: right;
+    margin-top: 2px;
+    background: url(../images/icon.gif) no-repeat 0 -55px;    
+}
+.shareNr .qq a{
+    width: 19px;
+    height: 15px;
+}
+.shareNr .sina{
+    width: 19px;
+    height: 15px;
+    margin-right: 6px;
+    margin-top: 3px;
+    float: right;
+    background: url(../images/icon.gif) no-repeat 0 -23px;    
+}
+.shareNr .sina a{
+    width: 12px;
+    height: 16px;
+}
+
+#diandian{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size:30px;
+    text-align: center;
+    vertical-align: middle;
+    height:50px;
+    line-height: 50px;
+    background: rgba(0,0,0, 0.3);
+    color: #ccc;
+}
