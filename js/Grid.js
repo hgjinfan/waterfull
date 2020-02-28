@@ -15,18 +15,20 @@ function Grid(dictionary){
 }
 Grid.prototype.init = function(){
     //模板修正
-    if(this.dictionary.type == "1"){
-        this.dictionary.url = "http://files.haohaowan.com/yxxj/li_" + this.dictionary.url;
-    }else if(this.dictionary.type=="3"){
-        this.dictionary.url = "http://files.haohaowan.com/yxxj/sp_" + this.dictionary.url + ".jpg";
-    }else if(this.dictionary.type=="2"){
-        this.dictionary.url = "http://files.haohaowan.com/yxxj/yy_r1.jpg";
-    }
+    // if(this.dictionary.type == "1"){
+    //     this.dictionary.url = "http://files.haohaowan.com/yxxj/li_" + this.dictionary.url;
+    // }else if(this.dictionary.type=="3"){
+    //     this.dictionary.url = "http://files.haohaowan.com/yxxj/sp_" + this.dictionary.url + ".jpg";
+    // }else if(this.dictionary.type=="2"){
+    //     this.dictionary.url = "http://files.haohaowan.com/yxxj/yy_r1.jpg";
+    // }
+    this.dictionary.image = this.dictionary.image.replace(/^(\/\/)/, function ($1) {return 'https://'})
+    this.dictionary.url = this.dictionary.image
 
     //数据绑定
     this.$dom = $(wf.compiled(this.dictionary));
     // grid整体初始高度
-    this.height = parseInt(this.dictionary.height) + 46;
+    this.height = 230 / this.dictionary.width * this.dictionary.height// parseInt(this.dictionary.height) + 46;
     //发出请求
     new ImageProxy(this);
     //上树
