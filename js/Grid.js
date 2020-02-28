@@ -49,7 +49,7 @@ Grid.prototype.init = function(){
 
 //图片load.gif代理类
 function ImageProxy(grid){
-    var height = grid.height - 46;
+    var height = grid.height;
     var $parentDOM = grid.$dom.find(".pic_box");
     var url = grid.dictionary.url;
     //new出一个新的图片
@@ -64,11 +64,11 @@ function ImageProxy(grid){
     //监听load
     $(img).load(function(){
         //修正高度
-        var gHeight = Math.round(230 / img.width * img.height + 46);
+        var gHeight = Math.round(230 / img.width * img.height);
         if(gHeight!=grid.height){
             grid.height = gHeight;
             $parentDOM.css({
-                "height": grid.height - 46
+                "height": grid.height
             });
         }
         //上树
