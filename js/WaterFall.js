@@ -25,17 +25,20 @@ WarterFall.prototype.getPage = function(number){
     var self = this;
     //发出JSON请求
     $.ajax({
-        "dataType" : "jsonp",
-        "url" : "http://yx.xianjian.com/p/api.php?method=wf&api_key=nimakdkeiLdkfen2lidkdlDLLEKd&page=" + number + "&per_page=10&tag=&type=5&order=2&_ksTS=1480315549837_78&jsoncallback=?",
+        // "dataType" : "jsonp",
+        //"url" : "http://yx.xianjian.com/p/api.php?method=wf&api_key=nimakdkeiLdkfen2lidkdlDLLEKd&page=" + number + "&per_page=10&tag=&type=5&order=2&_ksTS=1480315549837_78&jsoncallback=?",
+        url: 'https://api2.paixin.com/albums/129/medias?page=' + number + '&size=45&sort=createdAt,desc',
         "success" : function(data){
-            _.each(data.photos.photo,function(dictionary){
+            var p = data.elements
+            _.each(p,function(dictionary){
+                // console.log(dictionary)
                 new Grid(dictionary);
-                console.log(dictionary);
+                // console.log(dictionary);
             });
             var maxH = _.max(self.colHeightArr);
             self.$dom.find("#diandian").css("top", maxH);
             //开锁
-            if(data.photos.photo.length != 0){
+            if(p.length != 0){
                 self.lock = true;
             }
         }
